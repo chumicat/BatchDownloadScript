@@ -1,0 +1,6 @@
+*.json
+*.lic
+*.spec
+__pycache__
+build
+dist
