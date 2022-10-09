@@ -140,3 +140,60 @@ class BatchDateTimes:
                 for src, dst in replace_table.items():
                     v = v.replace(src, dst)
                 yield v
+
+    def list_config(self):
+        for key, value in self.__items.items():
+            print("{}: {}".format(key, str(value)))
+
+    def add_config_with_dict(self, newdict: dict):
+        idx = self.next_idx()
+        self.__items[idx] = self.batch_datetime_class_selector_with_dict(newdict)
+
+    def remove_config_with_idx(self, idx: int):
+        if idx in self.__items:
+            del self.__items[idx]
+
+    def add_config_interactive(self):
+        # Step 1: Select Type
+        print("Add new BatchDateTime - Step 1: Select Type")
+        print("  (1) Now to Past")
+        print("  (2) Now to Future")
+        print("  (3) Now to Period")
+        ans = input("> ")
+        if "1" in ans:
+            command = [1, 2, 3]
+        elif "2" in ans:
+            command = [1, 2, 4]
+        elif "3" in ans:
+            command = [1, 2, 5, 6]
+        else:
+            print("No Select")
+            return
+
+        print("Add new BatchDateTime - Step 2: Set Config")
+        # Step 2: Set Config
+        new_config_dict = {}
+        if 1 in command:
+            new_config_dict["format"] = input("Format: ").replace("%20", " ")
+        if 2 in command:
+            new_config_dict["interval"] = float(input("Interval (s): "))
+        if 3 in command:
+            new_config_dict["lookback_period"] = float(input("lookback_period (s): "))
+        if 4 in command:
+            new_config_dict["lookforward_period"] = float(input("lookforward_period (s): "))
+        if 5 in command:
+            new_config_dict["begin_datetime"] = input("begin_datetime (%Y-%m-%d %H:%M:%S.%f): ")
+        if 6 in command:
+            new_config_dict["end_datetime"] = input("end_datetime: (%Y-%m-%d %H:%M:%S.%f): ")
+
+        # Step 3: export
+        self.add_config_with_dict(new_config_dict)
+
+    def remove_config_interactive(self):
+        # Step 1: List all BatchDateTime
+        print("Remove BatchDateTime - Step 1: Check all BatchDateTime")
+        self.list_config()
+
+        # Step 2: Select BatchDateTime to remove
+        print("Remove BatchDateTime - Step 2: Select idx of BatchDateTime to Delete")
+        self.remove_config_with_idx(int(input("> ")))
