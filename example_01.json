@@ -1,0 +1,50 @@
+{
+    "0": {
+        "format": "%Y-%m-%d",
+        "interval": 86400.0,
+        "lookback_period": 2592000.0
+    },
+    "1": {
+        "format": "%Y-%m-%d",
+        "interval": 86400.0,
+        "lookback_period": 2592000.0
+    },
+    "2": {
+        "format": "%Y-%m-%d",
+        "interval": 86400,
+        "lookback_period": 2592000
+    },
+    "3": {
+        "format": "%Y-%m-%d",
+        "interval": 86400.0,
+        "lookforward_period": 2592000.0
+    },
+    "4": {
+        "format": "%Y-%m-%d",
+        "interval": 86400.0,
+        "lookforward_period": 2592000.0
+    },
+    "5": {
+        "format": "%Y-%m-%d",
+        "interval": 86400,
+        "lookforward_period": 2592000
+    },
+    "6": {
+        "format": "%Y-%m-%d",
+        "interval": 86400.0,
+        "begin_datetime": "2022-10-09 14:23:50.523000",
+        "end_datetime": "2022-10-16 14:23:50.523000"
+    },
+    "7": {
+        "format": "%Y-%m-%d",
+        "interval": 86400.0,
+        "begin_datetime": "2022-10-09 00:00:00.000000",
+        "end_datetime": "2022-10-09 00:00:00.000000"
+    },
+    "8": {
+        "format": "%Y-%m-%d",
+        "interval": 86400,
+        "begin_datetime": "2022-10-09 14:23:50.523000",
+        "end_datetime": "2022-10-16 14:23:50.523000"
+    }
+}

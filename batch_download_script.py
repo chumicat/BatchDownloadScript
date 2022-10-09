@@ -51,6 +51,6 @@ if __name__ == "__main__":
         batch_datetimes.export_json(CONFIG_FILENAME)
     else:
         print("`batch_download_script.py` to downlaod with config")
-        print("`batch_download_script.py config lsit`   to list item")
+        print("`batch_download_script.py config list`   to list item")
         print("`batch_download_script.py config add`    to add new item")
         print("`batch_download_script.py config remove` to remove item")
